@@ -1,0 +1,192 @@
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial;
+  background:#f7f8fa;
+  color:#172033;
+}
+
+header{
+  height:65px;
+  background:white;
+  display:flex;
+  align-items:center;
+  padding:0 7%;
+  gap:25px;
+  border-bottom:1px solid #ddd;
+}
+
+header h2{
+  color:#173f72;
+  margin-right:auto;
+}
+
+button{
+  border:0;
+  background:white;
+  padding:10px;
+  cursor:pointer;
+}
+
+.cart,
+.red{
+  background:#ff3932;
+  color:white;
+  border-radius:7px;
+  font-weight:bold;
+}
+
+.page{
+  display:none;
+  width:900px;
+  margin:30px auto;
+}
+
+#home{
+  display:block;
+}
+
+.hero{
+  background:#173f72;
+  color:white;
+  padding:45px;
+  border-radius:20px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.hero h1{
+  font-size:45px;
+}
+
+.hero input,
+.search{
+  padding:15px;
+  width:500px;
+  border:0;
+  border-radius:7px;
+}
+
+.burger{
+  font-size:130px;
+}
+
+.cards{
+  display:flex;
+  gap:18px;
+}
+
+.restaurant,
+.item,
+.order,
+.box,
+.bill{
+  background:white;
+  border:1px solid #ddd;
+  border-radius:12px;
+  padding:15px;
+  margin:12px 0;
+}
+
+.restaurant{
+  width:30%;
+  display:inline-block;
+  cursor:pointer;
+}
+
+.food{
+  height:120px;
+  background:#fff0df;
+  border-radius:10px;
+  display:grid;
+  place-items:center;
+  font-size:60px;
+}
+
+.small{
+  width:80px;
+  height:70px;
+  font-size:40px;
+  flex-shrink:0;
+}
+
+.row,
+.item,
+.order{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.row div:nth-child(2),
+.item div:nth-child(2),
+.order div:nth-child(2){
+  flex:1;
+}
+
+.item button{
+  background:#ff3932;
+  color:white;
+  border-radius:6px;
+}
+
+.red{
+  padding:13px 25px;
+}
+
+.redtext{
+  color:#ff3932;
+}
+
+.bill p,
+.bill h3{
+  display:flex;
+  justify-content:space-between;
+}
+
+.box label{
+  display:block;
+  padding:12px;
+  border-bottom:1px solid #eee;
+  cursor:pointer;
+}
+
+.success{
+  width:80px;
+  height:80px;
+  background:#45b96a;
+  color:white;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-size:45px;
+  margin:auto;
+}
+
+.center{
+  text-align:center;
+}
+
+.profile{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.avatar{
+  width:60px;
+  height:60px;
+  background:#ddd;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-size:25px;
+}
+
+#paymentMessage{
+  color:#ff3932;
+  font-weight:bold;
+}

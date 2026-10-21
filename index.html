@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Foodiee</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h2>🍴 Foodiee</h2>
+
+  <nav>
+    <button onclick="show('home')">Home</button>
+    <button onclick="show('restaurants')">Search</button>
+    <button onclick="show('orders')">Orders</button>
+    <button onclick="show('profile')">Profile</button>
+  </nav>
+
+  <button class="cart" onclick="show('cart')">
+    🛒 <span id="count">0</span>
+  </button>
+</header>
+
+
+<!-- HOME -->
+
+<section id="home" class="page">
+
+  <div class="hero">
+
+    <div>
+      <small>FAST • FRESH • DELICIOUS</small>
+
+      <h1>Good Food<br>Delivered To You</h1>
+
+      <p>
+        Order from your favourite restaurants
+        and enjoy great food at home.
+      </p>
+
+      <input placeholder="Search for restaurants, cuisines...">
+    </div>
+
+    <b class="burger">🍔</b>
+
+  </div>
+
+
+  <h2>Popular Restaurants</h2>
+
+  <div class="cards">
+
+    <div class="restaurant" onclick="openRestaurant('spicy')">
+      <div class="food">🍛</div>
+      <h3>The Spicy House</h3>
+      <p>Indian • Chinese</p>
+      ⭐ 4.5 • 30–40 mins
+    </div>
+
+
+    <div class="restaurant" onclick="openRestaurant('pizza')">
+      <div class="food">🍕</div>
+      <h3>Pizza Palace</h3>
+      <p>Pizza • Italian</p>
+      ⭐ 4.3 • 25–35 mins
+    </div>
+
+
+    <div class="restaurant" onclick="openRestaurant('burger')">
+      <div class="food">🍔</div>
+      <h3>Burger Hub</h3>
+      <p>Burgers • Fast Food</p>
+      ⭐ 4.2 • 20–30 mins
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- RESTAURANTS -->
+
+<section id="restaurants" class="page">
+
+  <h2>Restaurants</h2>
+
+  <input class="search"
+         placeholder="🔍 Search restaurants, cuisines...">
+
+
+  <div class="restaurant row"
+       onclick="openRestaurant('spicy')">
+
+    <div class="food small">🍛</div>
+
+    <div>
+      <h3>The Spicy House</h3>
+      <p>Indian • Chinese</p>
+      ⭐ 4.5 • 30–40 mins
+    </div>
+
+  </div>
+
+
+  <div class="restaurant row"
+       onclick="openRestaurant('pizza')">
+
+    <div class="food small">🍕</div>
+
+    <div>
+      <h3>Pizza Palace</h3>
+      <p>Pizza • Italian</p>
+      ⭐ 4.3 • 25–35 mins
+    </div>
+
+  </div>
+
+
+  <div class="restaurant row"
+       onclick="openRestaurant('burger')">
+
+    <div class="food small">🍔</div>
+
+    <div>
+      <h3>Burger Hub</h3>
+      <p>Burgers • Fast Food</p>
+      ⭐ 4.2 • 20–30 mins
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- MENU -->
+
+<section id="menu" class="page">
+
+  <button onclick="show('restaurants')">
+    ← Back
+  </button>
+
+
+  <div class="restaurant row">
+
+    <div id="restaurantImage"
+         class="food small">
+      🍛
+    </div>
+
+    <div>
+
+      <h2 id="restaurantName">
+        The Spicy House
+      </h2>
+
+      <p id="restaurantType">
+        Indian • Chinese
+      </p>
+
+      ⭐ <span id="restaurantRating">4.5</span>
+      • 30–40 mins
+
+    </div>
+
+  </div>
+
+
+  <h3 class="redtext">Menu</h3>
+
+  <div id="menuList"></div>
+
+
+  <button class="red"
+          onclick="show('cart')">
+    View Cart 🛒
+  </button>
+
+</section>
+
+
+<!-- CART -->
+
+<section id="cart" class="page">
+
+  <h2>Your Cart</h2>
+
+  <div id="cartList"></div>
+
+
+  <div class="bill">
+
+    <p>
+      Item Total
+      <b>₹<span id="subtotal">0</span></b>
+    </p>
+
+    <p>
+      Delivery Fee
+      <b>₹30</b>
+    </p>
+
+    <hr>
+
+    <h3>
+      Total
+      <b>₹<span id="total">0</span></b>
+    </h3>
+
+  </div>
+
+
+  <button class="red"
+          onclick="show('checkout')">
+
+    Proceed to Checkout
+
+  </button>
+
+</section>
+
+
+<!-- CHECKOUT -->
+
+<section id="checkout" class="page">
+
+  <h2>Checkout</h2>
+
+
+  <div class="box">
+
+    <h3>📍 Delivery Address</h3>
+
+    <p>
+      123, Green Park Street,<br>
+      Erode, Tamil Nadu
+    </p>
+
+  </div>
+
+
+  <div class="box">
+
+    <h3>Payment Method</h3>
+
+    <label>
+      <input type="radio"
+             name="payment"
+             value="UPI"
+             checked>
+      UPI
+    </label>
+
+    <label>
+      <input type="radio"
+             name="payment"
+             value="Card">
+      Card
+    </label>
+
+    <label>
+      <input type="radio"
+             name="payment"
+             value="Cash">
+      Cash on Delivery
+    </label>
+
+  </div>
+
+
+  <button class="red"
+          onclick="show('payment')">
+
+    Proceed to Payment
+
+  </button>
+
+</section>
+
+
+<!-- PAYMENT -->
+
+<section id="payment" class="page">
+
+  <h2>Payment</h2>
+
+
+  <div class="bill">
+
+    <p>
+      Order Amount
+      <b>₹<span id="pay">0</span></b>
+    </p>
+
+    <p>
+      Delivery Fee
+      <b>₹30</b>
+    </p>
+
+    <hr>
+
+    <h3>
+      Total Payable
+      <b>₹<span id="paytotal">0</span></b>
+    </h3>
+
+  </div>
+
+
+  <div class="box">
+
+    <h3>Choose Payment</h3>
+
+
+    <label>
+      <input type="radio"
+             name="payment2"
+             value="UPI"
+             checked
+             onchange="paymentChanged('UPI')">
+
+      🔴 UPI
+    </label>
+
+
+    <label>
+      <input type="radio"
+             name="payment2"
+             value="Card"
+             onchange="paymentChanged('Card')">
+
+      ⚪ Card
+    </label>
+
+
+    <label>
+      <input type="radio"
+             name="payment2"
+             value="Cash"
+             onchange="paymentChanged('Cash')">
+
+      ⚪ Cash on Delivery
+    </label>
+
+
+    <p id="paymentMessage">
+      UPI selected
+    </p>
+
+  </div>
+
+
+  <button class="red"
+          onclick="placeOrder()">
+
+    Pay Now
+
+  </button>
+
+</section>
+
+
+<!-- SUCCESS -->
+
+<section id="success"
+         class="page center">
+
+  <div class="success">
+    ✓
+  </div>
+
+  <h2>
+    Order Placed Successfully!
+  </h2>
+
+  <p>
+    Your food is being prepared.
+  </p>
+
+
+  <div class="box">
+
+    <p>
+      Order ID
+      <b>#FD123456</b>
+    </p>
+
+    <p>
+      Delivery Time
+      <b>30–40 mins</b>
+    </p>
+
+  </div>
+
+
+  <button class="red"
+          onclick="show('orders')">
+
+    My Orders
+
+  </button>
+
+</section>
+
+
+<!-- ORDERS -->
+
+<section id="orders" class="page">
+
+  <h2>My Orders</h2>
+
+
+  <div class="order">
+
+    <div class="food small">
+      🍛
+    </div>
+
+    <div>
+
+      <h3>
+        The Spicy House
+      </h3>
+
+      <p>
+        Paneer Tikka • 2 items
+      </p>
+
+      <small>
+        Today, 10:20 AM
+      </small>
+
+    </div>
+
+    <b>₹250</b>
+
+  </div>
+
+</section>
+
+
+<!-- PROFILE -->
+
+<section id="profile" class="page">
+
+  <h2>Profile</h2>
+
+
+  <div class="box profile">
+
+    <div class="avatar">
+      H
+    </div>
+
+    <div>
+
+      <h3>
+        Harshini V
+      </h3>
+
+      <p>
+        harshini@gmail.com
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="box">
+
+    <p onclick="show('orders')">
+      📋 My Orders　›
+    </p>
+
+    <p>
+      📍 Addresses　›
+    </p>
+
+    <p>
+      💳 Payment Methods　›
+    </p>
+
+    <p>
+      ❓ Help & Support　›
+    </p>
+
+    <p>
+      ↪ Log Out　›
+    </p>
+
+  </div>
+
+</section>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
